@@ -6,8 +6,11 @@ public class Conta {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println(dadosIniciais());
+        String nome = "Jacqueline Oliveira";
+        String tipoConta = "Corrente";
         double saldo = 2500.00;
+
+        System.out.println(dadosIniciais(nome, tipoConta, saldo));
 
         int opcao = 0;
         while (opcao != 4) {
@@ -45,14 +48,15 @@ public class Conta {
         sc.close();
     }
 
-    public static String dadosIniciais(){
+    public static String dadosIniciais(String nome, String tipoConta, double saldo){
+        String saldoFormatado = String.format("%.2f", saldo);
         return  "*".repeat(23) +
                 "\nDados iniciais do cliente:" +
                 "\n" +
                 "\n" +
-                "\nNome:  Jacqueline Oliveira" +
-                "\nTipo conta: Corrente" +
-                "\nSaldo inicial: R$ 2500,00" +
+                "\nNome: " + nome +
+                "\nTipo conta: " + tipoConta +
+                "\nSaldo inicial: R$ " + saldoFormatado +
                 "\n" + "*".repeat(23);
     }
 
