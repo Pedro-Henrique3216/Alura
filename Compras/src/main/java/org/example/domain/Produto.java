@@ -23,4 +23,6 @@ public class Produto implements Comparable<Produto>{
     public String toString() {
         return this.descricao + " - " + String.format("%.2f", this.price);
     }
+
+
 }
