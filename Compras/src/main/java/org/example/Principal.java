@@ -1,9 +1,11 @@
 package org.example;
 
 import org.example.domain.Compra;
+import org.example.domain.Endereco;
 import org.example.domain.Produto;
 import org.example.domain.Usuario;
 import org.example.exception.EnderecoNotFound;
+import org.example.services.GerarArquivo;
 import org.example.services.VerificaCep;
 
 import java.io.IOException;
@@ -32,7 +34,9 @@ public class Principal {
             String numero = sc.nextLine();
 
             try {
-                usuario = new Usuario(nome, cpf, email, senha, VerificaCep.retornaEndereco(cep, numero));
+                Endereco endereco = VerificaCep.retornaEndereco(cep, numero);
+                GerarArquivo.geraArquivo(endereco);
+                usuario = new Usuario(nome, cpf, email, senha, endereco);
             } catch (IOException | InterruptedException e) {
                 System.out.println("Erro: " + e.getMessage());
             } catch (EnderecoNotFound e) {
