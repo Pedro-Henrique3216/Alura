@@ -58,7 +58,7 @@ public class Principal {
 
         endereco += "/" + codigoMarca + "/modelos";
 
-        Teste json = converteDados.converteDados(endereco, Teste.class);
+        Modelos json = converteDados.converteDados(endereco, Modelos.class);
 
         List<Dados> modelos = json.modelos();
         modelos.forEach(System.out::println);
@@ -75,8 +75,7 @@ public class Principal {
         int codigoCarro = sc.nextInt();
 
         endereco += "/" + codigoCarro + "/anos";
-        List<Dados> dados = Arrays.stream(converteDados.converteDados(endereco, Dados[].class))
-                .collect(Collectors.toList());
+        List<Dados> dados = converteDados.obterLista(endereco, Dados.class);
 
         List<Automovel> automoveis = new ArrayList<>();
         endereco += "/";
