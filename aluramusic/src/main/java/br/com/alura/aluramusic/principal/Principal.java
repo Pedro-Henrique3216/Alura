@@ -39,6 +39,9 @@ public class Principal {
             case 3:
                 listarMusica();
                 break;
+            case 4:
+                buscarMusicaPorArtista();
+                break;
             default:
                 System.out.println("Opção invalida");
                 break;
@@ -82,5 +85,17 @@ public class Principal {
     private void listarMusica(){
         List<Musica> musicas = repository.listarMusicas();
         musicas.forEach(System.out::println);
+    }
+
+    private void buscarMusicaPorArtista(){
+        listarArtista();
+        System.out.println("Digite o nome do artista: ");
+        String nomeArtista = sc.nextLine();
+        Optional<Artista> verificacao = repository.buscarPorNome(nomeArtista);
+        if(verificacao.isPresent()){
+            Artista artista = verificacao.get();
+            List<Musica> musicas = repository.listarMusicasPorArtista(artista);
+            musicas.forEach(System.out::println);
+        }
     }
 }
