@@ -36,6 +36,9 @@ public class Principal {
             case 2:
                 cadastrarMusica();
                 break;
+            case 3:
+                listarMusica();
+                break;
             default:
                 System.out.println("Opção invalida");
                 break;
@@ -74,5 +77,10 @@ public class Principal {
         } else {
             System.out.println("Artista não encontrado");
         }
+    }
+
+    private void listarMusica(){
+        List<Musica> musicas = repository.listarMusicas();
+        musicas.forEach(System.out::println);
     }
 }
