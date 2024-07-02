@@ -24,4 +24,23 @@ public class Frase {
         this.poster = poster;
     }
 
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getFrase() {
+        return frase;
+    }
+
+    public String getPersonagem() {
+        return personagem;
+    }
+
+    public String getPoster() {
+        return poster;
+    }
 }
