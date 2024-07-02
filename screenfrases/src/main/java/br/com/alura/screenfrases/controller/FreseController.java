@@ -1,6 +1,6 @@
 package br.com.alura.screenfrases.controller;
 
-import br.com.alura.screenfrases.dto.SerieDTO;
+import br.com.alura.screenfrases.dto.FraseDTO;
 import br.com.alura.screenfrases.service.FraseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,7 @@ public class FreseController {
     private FraseService service;
 
     @GetMapping
-    public ResponseEntity<SerieDTO> buscarFraseAleatoria() {
+    public ResponseEntity<FraseDTO> buscarFraseAleatoria() {
         return ResponseEntity.ok(service.fraseAleatoria());
     }
 

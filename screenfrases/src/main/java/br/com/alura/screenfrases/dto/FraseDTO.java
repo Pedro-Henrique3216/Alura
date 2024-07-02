@@ -1,6 +1,6 @@
 package br.com.alura.screenfrases.dto;
 
-public record SerieDTO(
+public record FraseDTO(
         Long id,
         String titulo,
         String frase,
